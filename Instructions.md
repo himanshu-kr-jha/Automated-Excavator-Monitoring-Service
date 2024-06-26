@@ -1,0 +1,28 @@
+Make Docker image containing only following files: -best.pt -Dockerfile
+-process_video.py -requirement.txt Push it on ECR Repository named
+excavator_monitoring
+
+Further steps:
+
+1\. Create S3 bucket for video-input : excavator-video-input 2. Create
+S3 bucket for video-output: excavator-video-output
+
+3\. Create Policy on IAM using provided Policy:
+excavator-monitor-s3-policy.json 4. Create Role on IAM :
+excavator-monitor-taskRole containing above created policy and
+AmazonSSMReadOnlyAccess
+
+5\. Setup Amazon ECS: a. Create Cluster with name :
+excavator-monitor-cluster b. Create TaskDefinition and in container
+define the image you formed earlier with name
+\[excavator-monitor-container\] c. Task Definition:
+excavator-monitor-task:4 (this can differ as per the version of the
+image)
+
+6\. Create AWS lambda function to trigger S3 input bucket. -Make sure to
+create it with new role with ECSFullAccess and Attach policy of
+S3ReadOnlyAccess -Use the lambda_function.py code in the funtion you
+created. -Put the trigger for the input bucket(excavator-video-input)
+-Deploy the function.
+
+Now you are good to go to to see if its working.
