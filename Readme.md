@@ -45,6 +45,6 @@ Push it on ECR Repository named excavator_monitoring
 - Put the trigger for output bucket(excavator-video-output) so that lambda function can fetch the created json file for respective videos that was processed.
 - Deploy the function.
 
-## This concludes the automated and scalable AWS architecture to process the excavator for its working.
-
-By @himanshu-kr-jha
+#### This concludes the automated and scalable AWS architecture to process the excavator for its working.
+##
+~ [@himanshu-kr-jha](https://www.github.com/himanshu-kr-jha)
