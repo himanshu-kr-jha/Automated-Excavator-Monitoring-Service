@@ -39,5 +39,12 @@ Push it on ECR Repository named excavator_monitoring
 - Use the lambda_function.py code in the funtion you created.
 - Put the trigger for the input bucket(excavator-video-input)
 - Deploy the function.
+### 6. Create AWS lambda function to trigger S3 output bucket.
+- Make sure to have required s3 access and timestream access.
+- Use the lambda_function_for_timestream.py code in lambda funtion on AWS to insert the data of state and probability to timestream database.
+- Put the trigger for output bucket(excavator-video-output) so that lambda function can fetch the created json file for respective videos that was processed.
+- Deploy the function.
 
-Now you are good to go to to see if its working.
+## This concludes the automated and scalable AWS architecture to process the excavator for its working.
+
+By @himanshu-kr-jha
