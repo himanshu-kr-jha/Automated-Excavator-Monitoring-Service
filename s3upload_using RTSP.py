@@ -9,9 +9,9 @@ from threading import Thread
 
 # Function for uploading the file into S3
 def upload_to_s3(file_name):
-    # s3_client = boto3.client('s3',
-    #                          aws_access_key_id='--------',
-    #                          aws_secret_access_key='---------')
+    s3_client = boto3.client('s3',
+                             aws_access_key_id='--------',
+                             aws_secret_access_key='---------')
     bucket_name = 'excavator-video-input'  # Mention bucket name which you created in S3
     path = 'webcammer/'  # Mention path where the files need to be uploaded
     upload_file_key = path + file_name
