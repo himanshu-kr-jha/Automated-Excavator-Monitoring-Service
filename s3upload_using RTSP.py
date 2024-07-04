@@ -10,8 +10,8 @@ from threading import Thread
 # Function for uploading the file into S3
 def upload_to_s3(file_name):
     s3_client = boto3.client('s3',
-                             aws_access_key_id='AKIA47CRYPB3P7XGSULX',
-                             aws_secret_access_key='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')
+                             aws_access_key_id='--------',
+                             aws_secret_access_key='---------')
     bucket_name = 'excavator-video-input'  # Mention bucket name which you created in S3
     path = 'webcammer/'  # Mention path where the files need to be uploaded
     upload_file_key = path + file_name
@@ -32,7 +32,7 @@ def get_file_name():
 
 # Function to handle the recording process
 def record_video():
-    remote_camera_url = 'rtsp://807e9439d5ca.entrypoint.cloud.wowza.com:1935/app-rC94792j/068b9c9a_stream2'  # Example: 'rtsp://username:password@192.168.1.101:554/stream1'
+    remote_camera_url = 'your url'  # Example: 'rtsp://username:password@192.168.1.101:554/stream1'
     # This will return video from the remote camera stream
     cap = cv2.VideoCapture(remote_camera_url)
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
